@@ -1,0 +1,236 @@
+Personal Information
+
+Name: Samson Vincent Julius
+Location: Lucknow, Uttar Pradesh, India
+Email: samsonvjulius@gmail.com
+Phone: +91-8604559883
+
+Education
+Bachelor of Technology (B.Tech) in Computer Science and Engineering
+
+Jaypee University of Information Technology (JUIT), Solan
+
+Duration: September 2022 – Present / Recently Graduated (based on your recent applications)
+CGPA: 8.2
+Relevant Coursework:
+Data Structures & Algorithms
+Object-Oriented Programming
+Operating Systems
+Database Management Systems
+Higher Secondary Education
+
+St. Francis' College, Lucknow
+
+Class XII: 93.75%
+Class X: 95.60%
+Professional Experience
+Software Engineer Intern
+Antier Solutions Pvt. Ltd.
+
+August 2025 – April 2026
+
+Worked primarily in:
+
+Backend Engineering
+Blockchain Infrastructure Development
+Distributed Systems
+Microservices Architecture
+Key Contributions
+Blockchain Infrastructure
+Developed custom modules using Cosmos SDK.
+Implemented Inter-Blockchain Communication (IBC).
+Configured and deployed Go-based relayers between blockchain networks.
+Worked with Cosmos ecosystem technologies including:
+Cosmos SDK
+Cosmos EVM
+IBC
+Enterprise Blockchain Solutions
+Built Hyperledger Fabric Proof-of-Concept solutions.
+Developed blockchain workflows for:
+Supply Chain Traceability
+Letter of Credit Systems
+Enabled secure multi-party transaction management.
+Backend Engineering
+Developed Golang microservices.
+Built authentication and user registration services.
+Implemented:
+OTP Authentication
+JWT Authentication
+Integrated RabbitMQ for asynchronous processing.
+Designed scalable backend workflows.
+Core Technical Profile
+
+Your strongest profile positioning is:
+
+Backend Engineer + Distributed Systems Engineer + Blockchain Infrastructure Engineer
+
+Rather than:
+
+❌ Blockchain Developer
+
+A stronger positioning for recruiters is:
+
+✅ Software Engineer specializing in Backend Systems, Distributed Systems, and Blockchain Infrastructure.
+
+Technical Skills
+Programming Languages
+Java
+Golang
+Python
+C
+C++
+SQL
+JavaScript
+HTML
+CSS
+Backend Development
+Frameworks
+Spring Boot
+Spring MVC
+Hibernate
+Gin
+Backend Concepts
+REST APIs
+Authentication & Authorization
+JWT
+OTP Authentication
+Microservices
+Layered Architecture
+Service-Repository Architecture
+Blockchain Technologies
+Enterprise Blockchain
+Hyperledger Fabric
+Cosmos Ecosystem
+Cosmos SDK
+Cosmos EVM
+IBC (Inter Blockchain Communication)
+Blockchain Engineering Concepts
+Blockchain Infrastructure
+Cross-Chain Communication
+Relayers
+Decentralized Networks
+On-Chain Data Processing
+Databases
+SQL
+MySQL
+PostgreSQL
+Caching
+Redis
+Messaging & Distributed Systems
+RabbitMQ
+Event-Driven Architectures
+Asynchronous Processing
+Service Decoupling
+Frontend Development
+Technologies
+React.js
+HTML
+CSS
+JavaScript
+Developer Tools
+Git
+GitHub
+IntelliJ IDEA
+VS Code
+PyCharm
+MATLAB
+Major Projects
+Asset Management Application
+Technologies
+Hyperledger Fabric
+Golang
+Highlights
+Blockchain-based asset tracking platform.
+Supply-chain transparency.
+Immutable audit trails.
+Role-based access control.
+Smart-contract-driven workflows.
+BTC/ETH Indexer
+Technologies
+Golang
+PostgreSQL
+Redis
+RPC
+Highlights
+Blockchain data indexing.
+Extracted Bitcoin and Ethereum transaction data.
+Normalized blockchain data into PostgreSQL.
+Implemented Redis caching for performance optimization.
+Online Quiz Application
+Technologies
+Java
+Spring Boot
+Spring MVC
+Highlights
+RESTful backend.
+CRUD operations.
+Concurrent quiz submissions.
+Layered architecture.
+PetCare
+Technologies
+Java
+Spring Boot
+Hibernate
+MySQL
+Highlights
+Multi-role backend application.
+Patient / Vet / Admin workflows.
+JWT authentication.
+Role-based authorization.
+IEEE JUIT Student Branch Website
+Technologies
+React.js
+CSS
+Highlights
+Responsive frontend.
+Event registration tracking.
+Supported 30+ technical events.
+Leadership Experience
+Vice Chairperson
+IEEE JUIT Student Branch
+Responsibilities
+Led a team of 25+ members.
+Organized:
+Workshops
+Bootcamps
+Technical events
+Managed execution of multiple large-scale initiatives.
+Areas of Interest
+
+Based on your projects, applications, and conversations, your primary professional interests are:
+
+Software Engineering
+Backend Development
+Distributed Systems
+Scalable System Design
+API Development
+Blockchain Engineering
+Blockchain Infrastructure
+Cosmos Ecosystem
+Hyperledger Fabric
+Cross-Chain Communication
+Web3 Systems
+Emerging Technologies
+AI/ML
+Blockchain
+Cloud-Native Architectures
+Roles You Are Best Suited For
+Strong Match
+Software Development Engineer (SDE)
+Software Engineer
+Backend Developer
+Backend Engineer
+Java Developer
+Golang Developer
+Platform Engineer
+Distributed Systems Engineer
+Specialized Match
+Blockchain Infrastructure Engineer
+Blockchain Developer
+Web3 Backend Engineer
+Cosmos SDK Developer
+Hyperledger Fabric Developer
+Good Match
+Full Stack Developer (Backend-heavy)
+Cloud Engineer (Entry Level)
+Site Reliability Engineer (Entry Level)
