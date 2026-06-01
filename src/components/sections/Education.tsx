@@ -29,7 +29,7 @@ export default function Education() {
         {/* Timeline */}
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px"
+          <div className="absolute left-12 md:left-5/4 top-0 bottom-0 w-px"
             style={{ background: "linear-gradient(180deg, transparent, #6C3FC5 10%, #22D3EE 80%, transparent)", transform: "translateX(-50%)" }} />
 
           <div className="space-y-12">
@@ -45,7 +45,7 @@ export default function Education() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                 >
                   {/* Timeline node */}
-                  <div className="absolute left-8 md:left-1/2 -translate-x-1/2 z-10">
+                  <div className="absolute left-12 md:left-5/4 -translate-x-1/2 z-10">
                     <div className="relative flex items-center justify-center w-12 h-12 rounded-full"
                       style={{ background: "rgba(5,8,17,0.95)", border: "2px solid #6C3FC5", boxShadow: "0 0 20px rgba(108,63,197,0.5)" }}>
                       <span className="text-xl">{edu.icon}</span>
@@ -59,10 +59,10 @@ export default function Education() {
                   </div>
 
                   {/* Card */}
-                  <div className={`w-full pl-24 md:pl-0 md:w-5/12 ${isLeft ? "md:mr-auto md:pr-16" : "md:ml-auto md:pl-16"}`}>
+                  <div className={`w-full pl-24 md:pl-0 md:w-4/4 ${isLeft ? "md:mr-auto md:pr-16" : "md:ml-auto md:pl-16"}`}>
                     <div
                       className="glass glass-hover p-6 cursor-default"
-                      style={{ borderColor: edu.type === "university" ? "rgba(108,63,197,0.3)" : "rgba(34,211,238,0.2)" }}
+                      style={{ borderColor: edu.type === "university" ? "rgba(108,63,197,0.3)" : "rgba(34,211,238,0.2)", padding: "12px"  }}
                     >
                       <div className="flex items-start justify-between mb-4">
                         <div>
@@ -76,6 +76,7 @@ export default function Education() {
                               background: edu.type === "university" ? "rgba(108,63,197,0.2)" : "rgba(34,211,238,0.1)",
                               color:      edu.type === "university" ? "#A855F7" : "#22D3EE",
                               border: `1px solid ${edu.type === "university" ? "rgba(108,63,197,0.3)" : "rgba(34,211,238,0.25)"}`,
+                              padding: "5px 10px",
                             }}
                           >
                             {edu.score}

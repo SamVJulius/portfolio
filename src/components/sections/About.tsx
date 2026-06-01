@@ -74,7 +74,7 @@ export default function About() {
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono transition-all hover:scale-105"
-                  style={{ background: "rgba(108,63,197,0.1)", border: "1px solid rgba(108,63,197,0.25)", color: "#94A3B8" }}
+                  style={{ background: "rgba(108,63,197,0.1)", border: "1px solid rgba(108,63,197,0.25)", color: "#94A3B8", padding: "4px 12px" }}
                 >
                   <Icon size={12} style={{ color: "#22D3EE" }} />
                   {text}
@@ -90,11 +90,11 @@ export default function About() {
             viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: 0.2 }}
           >
             {/* Interests */}
-            <div className="glass p-6">
-              <h3 className="font-display font-semibold text-sm mb-4" style={{ color: "#22D3EE" }}>
+            <div className="glass p-6 mt-6 lg:mt-0">
+              <h3 className="font-display font-semibold text-lg mb-4" style={{ color: "#22D3EE", padding: "15px", borderBottom: "1px solid rgba(34,211,238,0.2)" }}>
                 Core Interests
               </h3>
-              <div className="space-y-2">
+              <div className="space-y-2 flex flex-col gap-2">
                 {[
                   "Backend Engineering",
                   "Distributed Systems",
@@ -104,7 +104,7 @@ export default function About() {
                   "AI / ML",
                   "Cloud-Native Architectures",
                 ].map((interest) => (
-                  <div key={interest} className="flex items-center gap-2">
+                  <div key={interest} className="flex items-center gap-2 left-border" style={{  padding: "2px 0 2px 8px" }}>
                     <span className="w-1.5 h-1.5 rounded-full flex-shrink-0"
                       style={{ background: "#6C3FC5" }} />
                     <span className="text-sm" style={{ color: "#94A3B8" }}>{interest}</span>
@@ -114,11 +114,11 @@ export default function About() {
             </div>
 
             {/* Best-fit roles */}
-            <div className="glass p-6">
-              <h3 className="font-display font-semibold text-sm mb-4" style={{ color: "#22D3EE" }}>
+            <div className="glass p-6 mt-6 lg:mt-0">
+              <h3 className="font-display font-semibold text-lg mb-4" style={{ color: "#22D3EE", padding: "15px", borderBottom: "1px solid rgba(34,211,238,0.2)" }}>
                 Target Roles
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2" style={{  padding: "5px 0 5px 8px" }}>
                 {[
                   "SDE", "Backend Engineer", "Golang Developer",
                   "Java Developer", "Platform Engineer", "Blockchain Engineer",

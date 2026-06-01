@@ -36,6 +36,7 @@ export default function Experience() {
             className="glass p-6 md:p-8 animated-border mb-8"
             variants={fadeUp} initial="hidden" whileInView="show"
             viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: ei * 0.1 }}
+            style={{ borderColor: "rgba(108,63,197,0.2)", padding: "15px" }}
           >
             {/* Company header */}
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-8">
@@ -54,15 +55,15 @@ export default function Experience() {
 
               <div className="flex flex-wrap gap-2 items-center">
                 <span className="px-3 py-1 rounded-full font-display font-semibold text-sm"
-                  style={{ background: "rgba(108,63,197,0.2)", color: "#A855F7", border: "1px solid rgba(108,63,197,0.35)" }}>
+                  style={{ background: "rgba(108,63,197,0.2)", color: "#A855F7", border: "1px solid rgba(108,63,197,0.35)", padding: "5px 12px" }}>
                   {exp.role}
                 </span>
                 <span className="px-3 py-1 rounded-full font-mono text-xs"
-                  style={{ background: "rgba(34,211,238,0.08)", color: "#22D3EE", border: "1px solid rgba(34,211,238,0.2)" }}>
+                  style={{ background: "rgba(34,211,238,0.08)", color: "#22D3EE", border: "1px solid rgba(34,211,238,0.2)", padding: "5px 12px"  }}>
                   {exp.duration}
                 </span>
                 <span className="px-3 py-1 rounded-full font-mono text-xs"
-                  style={{ background: "rgba(8,15,31,0.8)", color: "#94A3B8", border: "1px solid rgba(108,63,197,0.2)" }}>
+                  style={{ background: "rgba(8,15,31,0.8)", color: "#94A3B8", border: "1px solid rgba(108,63,197,0.2)", padding: "5px 12px" }}>
                   {exp.type}
                 </span>
               </div>
@@ -74,7 +75,7 @@ export default function Experience() {
                 <div
                   key={mission.category}
                   className="rounded-xl overflow-hidden"
-                  style={{ border: `1px solid ${openMission === mi ? mission.color + "55" : "rgba(108,63,197,0.2)"}` }}
+                  style={{ border: `1px solid ${openMission === mi ? mission.color + "55" : "rgba(108,63,197,0.2)"}`, padding: "5px 12px" }}
                 >
                   <button
                     className="w-full flex items-center justify-between px-5 py-4 text-left transition-all"
@@ -104,14 +105,14 @@ export default function Experience() {
                           {mission.bullets.map((b, bi) => (
                             <motion.li
                               key={bi}
-                              className="flex gap-3 text-sm"
+                              className="flex gap-2 text-sm"
                               initial={{ opacity: 0, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: bi * 0.06 }}
                             >
                               <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
                                 style={{ background: mission.color }} />
-                              <span style={{ color: "#94A3B8" }}>{b}</span>
+                              <span style={{ color: "#94A3B8",  }}>{b}</span>
                             </motion.li>
                           ))}
                         </ul>
@@ -124,7 +125,7 @@ export default function Experience() {
 
             {/* Tech stack */}
             <div className="mt-6 pt-6 border-t" style={{ borderColor: "rgba(108,63,197,0.15)" }}>
-              <p className="font-mono text-xs mb-3" style={{ color: "#94A3B8" }}>Technologies Used</p>
+              <p className="font-mono text-xs mb-3" style={{ color: "#94A3B8", padding: "5px 12px" }}>Technologies Used</p>
               <div className="flex flex-wrap gap-2">
                 {exp.tech.map((t) => (
                   <span key={t} className="tech-badge">{t}</span>

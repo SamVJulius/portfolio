@@ -24,9 +24,13 @@ function SkillBar({ name, level, color, delay }: { name: string; level: number; 
       <div className="skill-bar-track">
         <motion.div
           className="skill-bar-fill"
-          style={{ background: `linear-gradient(90deg, ${color}, #22D3EE)` }}
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: level / 100 }}
+          style={{
+            background: `linear-gradient(90deg, ${color}, #22D3EE)`,
+            width: 0,
+            display: "block",
+          }}
+          initial={{ width: 0 }}
+          whileInView={{ width: `${level}%` }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: delay + 0.2, ease: "easeOut" }}
         />
@@ -57,26 +61,27 @@ export default function Skills() {
         </motion.div>
 
         {/* Tab selector */}
-        <div className="flex flex-wrap gap-2 mb-10">
+        {/* <div className="flex flex-wrap gap-2 mb-10">
           {skillGroups.map((group, i) => (
             <button
               key={group.label}
               onClick={() => setActive(i)}
               className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
               style={{
-                background:   active === i ? group.color : "rgba(8,15,31,0.8)",
+                background:   active === i ? group.color : "rgba(108, 63, 197, 0.25)",
                 color:        active === i ? "#fff" : "#94A3B8",
-                border:       `1px solid ${active === i ? group.color : "rgba(108,63,197,0.25)"}`,
+                border:       `1px solid ${active === i ? group.color : "rgba(108, 63, 197, 0.25)"}`,
                 boxShadow:    active === i ? `0 0 20px ${group.color}44` : "none",
+                padding:       active === i ? "0.5rem 1.5rem" : "0.4rem 1.2rem",
               }}
             >
               {group.label}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Skill panel */}
-        <div className="grid lg:grid-cols-2 gap-10">
+        <div className="grid lg:grid-cols-2 gap-5" style={{ padding: "2px" }}>
           {/* Bar chart */}
           <motion.div
             key={active}
@@ -84,8 +89,9 @@ export default function Skills() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
+            style={{ padding: "15px" }}
           >
-            <h3 className="font-display font-semibold mb-6" style={{ color: skillGroups[active].color }}>
+            <h3 className="font-display text-lg font-semibold mb-6" style={{ color: skillGroups[active].color }}>
               {skillGroups[active].label}
             </h3>
             <div className="space-y-4">
@@ -108,7 +114,7 @@ export default function Skills() {
                 key={group.label}
                 className={`glass p-4 cursor-pointer transition-all duration-200 ${active === gi ? "glass-hover" : ""}`}
                 onClick={() => setActive(gi)}
-                style={{ borderColor: active === gi ? `${group.color}88` : "rgba(108,63,197,0.15)" }}
+                style={{ borderColor: active === gi ? `${group.color}88` : "rgba(108, 63, 197, 0.15)" ,padding: "12px" }}
                 whileHover={{ scale: 1.01 }}
               >
                 <div className="flex items-center gap-3 mb-3">
@@ -137,7 +143,7 @@ export default function Skills() {
         {/* Floating skill bubbles decoration */}
         <motion.div
           className="mt-16 relative h-32 hidden lg:block overflow-hidden rounded-2xl"
-          style={{ background: "rgba(8,15,31,0.5)", border: "1px solid rgba(108,63,197,0.1)" }}
+          style={{ background: "rgba(8,15,31,0.5)", border: "1px solid rgba(108, 63, 197, 0.1)" }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
