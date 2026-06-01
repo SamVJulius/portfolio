@@ -30,25 +30,25 @@ export default function Navbar() {
   return (
     <>
       <motion.nav
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        className="fixed top-4 left-25 right-25 z-50 transition-all duration-300 rounded-full"
         style={{
-          background: scrolled ? "rgba(5,8,17,0.85)" : "transparent",
+          background: scrolled ? "rgba(5,8,17,0.05)" : "transparent",
           backdropFilter: scrolled ? "blur(20px)" : "none",
-          borderBottom: scrolled ? "1px solid rgba(108,63,197,0.15)" : "none",
+          borderBottom: scrolled ? "5px solid rgba(108,63,197,0.15)" : "none",
         }}
         initial={{ y: -80 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className="container flex items-center justify-between h-20">
+        <div className="container flex items-center justify-between h-20 ">
           {/* Logo */}
-          <a href="#" className="font-display font-bold text-lg tracking-tight">
+          <a href="#" className="font-display font-bold text-2xl tracking-tight size-lg flex items-center gap-1">
             <span className="gradient-text">SVJ</span>
             <span className="text-moon-gray font-light">.</span>
           </a>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-10">
             {nav.map((item) => {
               const id = item.href.replace("#", "");
               const isActive = activeSection === id;
@@ -56,13 +56,13 @@ export default function Navbar() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-lg"
+                  className="relative px-4 py-2 text-medium font-medium transition-colors duration-200 rounded-lg"
                   style={{ color: isActive ? "#22D3EE" : "#94A3B8" }}
                 >
                   {isActive && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 rounded-lg"
+                      className="absolute -inset-5 rounded-full"
                       style={{ background: "rgba(34,211,238,0.08)" }}
                       transition={{ type: "spring", bounce: 0.25, duration: 0.4 }}
                     />
@@ -78,14 +78,16 @@ export default function Navbar() {
             <a
               href={personal.resume}
               download
-              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:opacity-90"
+              className="flex items-center gap-2 px-6 py-4 rounded-lg text-lg font-medium transition-all duration-200 hover:opacity-90"
               style={{
-                background: "linear-gradient(135deg, #6C3FC5, #4F46E5)",
+                background: "linear-gradient(135deg, #6c3fc5, #4F46E5)",
                 color: "#fff",
-                boxShadow: "0 0 20px rgba(108,63,197,0.3)",
+                boxShadow: "0 0 20px rgba(255, 255, 255, 0.5)",
+                padding: "10px 20px",
+                borderRadius: "9999px",
               }}
             >
-              <Download size={14} />
+              <Download size={15} />
               Resume
             </a>
           </div>

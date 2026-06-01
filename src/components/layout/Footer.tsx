@@ -6,10 +6,10 @@ import { Github, Linkedin } from "@/components/Icons";
 export default function Footer() {
   return (
     <footer className="relative border-t" style={{ borderColor: "rgba(108,63,197,0.15)", background: "rgba(5,8,17,0.9)" }}>
-      <div className="container py-10 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="container py-1 flex flex-col md:flex-row items-center justify-between gap-5">
         <div className="text-center md:text-left">
           <span className="font-display font-bold gradient-text">SVJ.</span>
-          <p className="text-xs mt-1" style={{ color: "#94A3B8" }}>
+          <p className="text-sm mt-1" style={{ color: "#94A3B8" }}>
             Samson Vincent Julius · Software Engineer
           </p>
         </div>

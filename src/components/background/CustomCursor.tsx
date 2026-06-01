@@ -21,6 +21,7 @@ export default function CustomCursor() {
     // Laggy ring follows cursor with lerp
     let rafId: number;
     function animate() {
+      if (!dot || !ring) return;
       rafId = requestAnimationFrame(animate);
       const { x, y } = posRef.current;
       dot.style.transform  = `translate(${x - 4}px, ${y - 4}px)`;

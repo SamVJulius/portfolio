@@ -86,11 +86,11 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-80px)] py-16">
 
           {/* ── Left: Text ── */}
-          <div>
+          <div className="flex flex-col gap-2 justify-center ">
             {/* Status badge */}
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
-              style={{ background: "rgba(34,211,238,0.08)", border: "1px solid rgba(34,211,238,0.2)" }}
+              className="inline-flex self-start items-center gap-2 px-4 py-2 rounded-full mb-8"
+              style={{ background: "rgba(34,211,238,0.08)", border: "1px solid rgba(34,211,238,0.2)", padding: "5px 10px" }}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -149,6 +149,7 @@ export default function Hero() {
                 style={{
                   background: "linear-gradient(135deg, #6C3FC5, #4F46E5)",
                   boxShadow: "0 0 30px rgba(108,63,197,0.4)",
+                  padding: "5px 10px",
                 }}
               >
                 <Download size={16} />
@@ -163,6 +164,7 @@ export default function Hero() {
                   border: "1px solid rgba(34,211,238,0.4)",
                   color: "#22D3EE",
                   background: "rgba(34,211,238,0.06)",
+                  padding: "5px 10px",
                 }}
               >
                 View Resume
@@ -174,6 +176,7 @@ export default function Hero() {
                   border: "1px solid rgba(108,63,197,0.3)",
                   color: "#F1F5F9",
                   background: "rgba(108,63,197,0.08)",
+                  padding: "5px 10px",
                 }}
               >
                 <Mail size={16} />
