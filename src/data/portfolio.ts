@@ -207,7 +207,7 @@ export const projects = [
     category: "Blockchain",
     icon: "🔗",
     color: "#6C3FC5",
-    github: "https://github.com/SamVJulius",
+    github: "https://github.com/SamVJulius/asset-management",
     status: "Production",
   },
   {
@@ -226,7 +226,7 @@ export const projects = [
     category: "Backend / Blockchain",
     icon: "📡",
     color: "#22D3EE",
-    github: "https://github.com/SamVJulius",
+    github: "https://github.com/SamVJulius/blockchain-indexer",
     status: "Completed",
   },
   {
@@ -245,7 +245,7 @@ export const projects = [
     category: "Backend",
     icon: "🏥",
     color: "#4F46E5",
-    github: "https://github.com/SamVJulius",
+    github: "https://github.com/SamVJulius/PetCare",
     status: "Completed",
   },
   {
@@ -264,7 +264,7 @@ export const projects = [
     category: "Backend",
     icon: "📝",
     color: "#0EA5E9",
-    github: "https://github.com/SamVJulius",
+    github: "https://github.com/SamVJulius/quiz-online",
     status: "Completed",
   },
   {
@@ -283,7 +283,7 @@ export const projects = [
     category: "Full Stack",
     icon: "🌐",
     color: "#A855F7",
-    github: "https://github.com/SamVJulius",
+    github: "https://github.com/SamVJulius/ieee-website",
     status: "Deployed",
   },
 ];
@@ -293,7 +293,7 @@ export const leadership = [
     id: "ieee-vc",
     role: "Vice Chairperson",
     organization: "IEEE JUIT Student Branch",
-    duration: "2023 – 2025",
+    duration: "2024 – 2025",
     icon: "🏛️",
     color: "#F59E0B",
     achievements: [

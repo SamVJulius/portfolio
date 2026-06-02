@@ -17,7 +17,7 @@ export default function Projects() {
     <section id="projects" className="section">
       <div className="grid-lines" />
       <div className="nebula-bg w-[500px] h-[500px] top-1/4 left-1/2 -translate-x-1/2"
-        style={{ background: "radial-gradient(circle, rgba(108,63,197,0.07) 0%, transparent 70%)" }} />
+        style={{ background: "radial-gradient(circle, rgba(108,63,197,0.07) 0%, transparent 100%)" }} />
 
       <div className="container relative z-10">
         <motion.div variants={fadeUp} initial="hidden" whileInView="show"
@@ -31,7 +31,7 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((project, i) => (
             <motion.div
               key={project.id}
@@ -44,6 +44,7 @@ export default function Projects() {
               style={{
                 borderColor: hovered === project.id ? `${project.color}66` : "rgba(108,63,197,0.2)",
                 boxShadow:   hovered === project.id ? `0 0 30px ${project.color}22, 0 20px 40px rgba(0,0,0,0.3)` : undefined,
+                padding: "10px"
               }}
             >
               {/* Card header */}
@@ -65,6 +66,7 @@ export default function Projects() {
                           project.status === "Deployed" ? "#22D3EE" : "#A855F7",
                         border: `1px solid ${project.status === "Production" ? "rgba(74,222,128,0.3)" :
                           project.status === "Deployed" ? "rgba(34,211,238,0.3)" : "rgba(168,85,247,0.3)"}`,
+                          padding: "2px 6px"
                       }}
                     >
                       {project.status}
@@ -83,7 +85,7 @@ export default function Projects() {
                 <h3 className="font-display font-bold text-base mb-1" style={{ color: "#F1F5F9" }}>
                   {project.name}
                 </h3>
-                <p className="font-mono text-xs mb-3" style={{ color: "#94A3B8" }}>
+                <p className="font-mono text-xs mb-3" style={{ color: project.color }}>
                   {project.subtitle}
                 </p>
                 <p className="text-sm leading-relaxed" style={{ color: "#94A3B8" }}>
@@ -125,7 +127,7 @@ export default function Projects() {
                     <span
                       key={t}
                       className="px-2 py-0.5 rounded-full font-mono text-[0.65rem]"
-                      style={{ background: `${project.color}12`, color: project.color, border: `1px solid ${project.color}33` }}
+                      style={{ background: `${project.color}12`, color: project.color, border: `1px solid ${project.color}33`, padding: "2px 6px" }}
                     >
                       {t}
                     </span>
@@ -136,8 +138,8 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-medium transition-colors hover:opacity-80"
-                    style={{ color: "#94A3B8" }}
+                    className="flex items-center gap-1.5 text-sm font-medium transition-colors hover:opacity-80"
+                    style={{ color: "#94A3B8", padding: "4px 8px", borderRadius: "6px", background: "rgba(148,163,184,0.08)" }}
                   >
                     <Github size={14} />
                     GitHub
@@ -150,7 +152,8 @@ export default function Projects() {
 
         {/* View all CTA */}
         <motion.div
-          className="text-center mt-12"
+          className="text-center"
+          style={{ marginTop: "40px" }}
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
@@ -159,7 +162,7 @@ export default function Projects() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-sm transition-all hover:scale-105"
-            style={{ border: "1px solid rgba(108,63,197,0.35)", color: "#A855F7", background: "rgba(108,63,197,0.08)" }}
+            style={{ border: "1px solid rgba(108,63,197,0.35)", color: "#A855F7", background: "rgba(108,63,197,0.08)", padding: "8px 16px" }}
           >
             <Github size={16} />
             View All Projects on GitHub

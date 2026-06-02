@@ -38,7 +38,7 @@ export default function Leadership() {
             variants={fadeUp} initial="hidden" whileInView="show"
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            style={{ borderColor: `${lead.color}44` }}
+            style={{ borderColor: `${lead.color}44`, padding: "1.5rem", background: `rgba(5,8,17,0.6)` }}
           >
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
@@ -73,7 +73,7 @@ export default function Leadership() {
                   <div
                     key={label}
                     className="flex items-center gap-2 px-4 py-2 rounded-xl"
-                    style={{ background: `${lead.color}12`, border: `1px solid ${lead.color}33` }}
+                    style={{ background: `${lead.color}12`, border: `1px solid ${lead.color}33`, padding: "0.5rem 1rem" }}
                   >
                     <Icon size={14} style={{ color: lead.color }} />
                     <div>
@@ -84,7 +84,7 @@ export default function Leadership() {
                 ))}
                 <div
                   className="flex items-center px-4 py-2 rounded-xl"
-                  style={{ background: "rgba(34,211,238,0.08)", border: "1px solid rgba(34,211,238,0.2)" }}
+                  style={{ background: "rgba(34,211,238,0.08)", border: "1px solid rgba(34,211,238,0.2)", padding: "0.5rem 1rem" }}
                 >
                   <span className="font-mono text-xs" style={{ color: "#22D3EE" }}>{lead.duration}</span>
                 </div>
@@ -94,7 +94,7 @@ export default function Leadership() {
             {/* Achievements */}
             <div
               className="rounded-xl p-6"
-              style={{ background: "rgba(5,8,17,0.6)", border: `1px solid ${lead.color}22` }}
+              style={{ background: "rgba(5,8,17,0.6)", border: `1px solid ${lead.color}22`, padding : "1.5rem" }}
             >
               <p
                 className="font-mono text-xs uppercase tracking-widest mb-4"
@@ -125,7 +125,7 @@ export default function Leadership() {
         ))}
 
         {/* IEEE logo / tagline */}
-        <motion.div
+        {/* <motion.div
           className="text-center"
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -136,7 +136,7 @@ export default function Leadership() {
           <p className="font-display font-bold text-lg mt-1" style={{ color: "rgba(245,158,11,0.7)" }}>
             IEEE — Institute of Electrical and Electronics Engineers
           </p>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
