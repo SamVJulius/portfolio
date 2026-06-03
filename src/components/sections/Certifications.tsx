@@ -49,6 +49,7 @@ export default function Certifications() {
               style={{
                 borderColor: cert.placeholder ? "rgba(108,63,197,0.15)" : "rgba(168,85,247,0.4)",
                 borderStyle:  cert.placeholder ? "dashed" : "solid",
+                padding: cert.placeholder ? "2.5rem 1.5rem" : "1.5rem",
               }}
             >
               {cert.placeholder ? (
@@ -74,13 +75,15 @@ export default function Certifications() {
                   >
                     <Award size={24} style={{ color: "#A855F7" }} />
                   </div>
-                  <h3 className="font-display font-bold text-base mb-1" style={{ color: "#F1F5F9" }}>
+                  <h3 className="font-display font-bold text-base mb-1" style={{ color: "#F1F5F9", padding: "0.25rem" }}>
                     {cert.name}
                   </h3>
-                  <p className="font-mono text-xs mb-2" style={{ color: "#A855F7" }}>{cert.issuer}</p>
+                  <p className="font-mono text-xs mb-2" style={{ color: "#A855F7", padding: "0.25rem" }}>
+                    {cert.issuer}
+                  </p>
                   <span
                     className="px-3 py-0.5 rounded-full font-mono text-xs"
-                    style={{ background: "rgba(168,85,247,0.1)", color: "#A855F7", border: "1px solid rgba(168,85,247,0.25)" }}
+                    style={{ background: "rgba(168,85,247,0.1)", color: "#A855F7", border: "1px solid rgba(168,85,247,0.25)", padding: "0.25rem 0.75rem" }}
                   >
                     {cert.year}
                   </span>

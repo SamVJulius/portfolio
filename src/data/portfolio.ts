@@ -308,8 +308,8 @@ export const leadership = [
 ];
 
 export const certifications = [
-  { id: "cert-1", name: "Add Certification Here", issuer: "Certification Body", year: "2025", placeholder: true },
-  { id: "cert-2", name: "Add Certification Here", issuer: "Certification Body", year: "2025", placeholder: true },
+  { id: "cert-1", name: "Social Networks", issuer: "IIT Madras", year: "2025", placeholder: false },
+  { id: "cert-2", name: "Digital Electronic Circuits", issuer: "IIT Kharagpur", year: "2025", placeholder: false },
   { id: "cert-3", name: "Add Certification Here", issuer: "Certification Body", year: "2024", placeholder: true },
 ];
 

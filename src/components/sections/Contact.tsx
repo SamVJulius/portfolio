@@ -7,7 +7,7 @@ import { Github, Linkedin } from "@/components/Icons";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
-  show:   { opacity: 1, y: 0 },
+  show: { opacity: 1, y: 0 },
 };
 
 const contacts = [
@@ -35,17 +35,32 @@ const contacts = [
 ];
 
 export default function Contact() {
-  const [form, setForm]       = useState({ name: "", email: "", message: "" });
-  const [sent, setSent]       = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate send delay (wire up your preferred email API here)
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSent(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error ?? "Something went wrong. Please try again.");
+      } else {
+        setSent(true);
+      }
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -53,22 +68,31 @@ export default function Contact() {
       <div className="grid-lines" />
       <div
         className="nebula-bg w-[500px] h-[500px] bottom-0 left-1/2 -translate-x-1/2"
-        style={{ background: "radial-gradient(circle, rgba(108,63,197,0.1) 0%, transparent 70%)" }}
+        style={{
+          background:
+            "radial-gradient(circle, rgba(108,63,197,0.1) 0%, transparent 70%)",
+        }}
       />
 
       <div className="container relative z-10">
         <motion.div
-          variants={fadeUp} initial="hidden" whileInView="show"
-          viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.5 }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
           <p className="section-label justify-center">08 · Contact</p>
           <h2 className="section-title">
             Mission <span className="gradient-text">Control</span>
           </h2>
-          <p className="max-w-xl mx-auto text-base" style={{ color: "#94A3B8" }}>
-            Ready to collaborate, discuss opportunities, or just geek out about distributed systems?
-            Open a channel — I respond promptly.
+          <p
+            className="max-w-xl mx-auto text-base"
+            style={{ color: "#94A3B8" }}
+          >
+            Ready to collaborate, discuss opportunities, or just geek out about
+            distributed systems? Open a channel — I respond promptly.
           </p>
         </motion.div>
 
@@ -76,29 +100,52 @@ export default function Contact() {
           {/* ── Left: Info ── */}
           <motion.div
             className="space-y-6"
-            variants={fadeUp} initial="hidden" whileInView="show"
-            viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: 0.1 }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
             {/* Terminal status */}
             <div
               className="rounded-xl p-5 font-mono text-sm"
-              style={{ background: "rgba(5,8,17,0.9)", border: "1px solid rgba(108,63,197,0.2)" }}
+              style={{
+                background: "rgba(5,8,17,0.9)",
+                border: "1px solid rgba(108,63,197,0.2)",
+                padding: "20px",
+              }}
             >
               <div className="flex items-center gap-2 mb-4">
                 <span className="w-3 h-3 rounded-full bg-red-500" />
                 <span className="w-3 h-3 rounded-full bg-yellow-400" />
                 <span className="w-3 h-3 rounded-full bg-green-400" />
-                <Terminal size={12} className="ml-2" style={{ color: "#94A3B8" }} />
-                <span className="text-xs" style={{ color: "#94A3B8" }}>mission-control.sh</span>
+                <Terminal
+                  size={12}
+                  className="ml-2"
+                  style={{ color: "#94A3B8" }}
+                />
+                <span className="text-xs" style={{ color: "#94A3B8" }}>
+                  mission-control.sh
+                </span>
               </div>
               <div className="space-y-1.5" style={{ color: "#94A3B8" }}>
-                <p><span style={{ color: "#22D3EE" }}>$ </span>status</p>
-                <p style={{ color: "#4ade80" }}>● online · Available for opportunities</p>
-                <p><span style={{ color: "#22D3EE" }}>$ </span>location</p>
+                <p>
+                  <span style={{ color: "#22D3EE" }}>$ </span>status
+                </p>
+                <p style={{ color: "#4ade80" }}>
+                  ● online · Available for opportunities
+                </p>
+                <p>
+                  <span style={{ color: "#22D3EE" }}>$ </span>location
+                </p>
                 <p>{personal.location}</p>
-                <p><span style={{ color: "#22D3EE" }}>$ </span>response_time</p>
+                <p>
+                  <span style={{ color: "#22D3EE" }}>$ </span>response_time
+                </p>
                 <p style={{ color: "#4ade80" }}>{"< 24 hours"}</p>
-                <p><span style={{ color: "#22D3EE" }}>$ </span>open_to</p>
+                <p>
+                  <span style={{ color: "#22D3EE" }}>$ </span>open_to
+                </p>
                 <p>["SDE roles", "Backend", "Blockchain", "Internships"]</p>
                 <p className="flex items-center gap-1">
                   <span style={{ color: "#22D3EE" }}>$ </span>
@@ -116,7 +163,11 @@ export default function Contact() {
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-xl transition-all duration-200 hover:scale-[1.02] group"
-                  style={{ background: "rgba(8,15,31,0.7)", border: `1px solid ${color}22` }}
+                  style={{
+                    background: "rgba(8,15,31,0.7)",
+                    border: `1px solid ${color}22`,
+                    padding: "10px",
+                  }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = `${color}66`;
                     e.currentTarget.style.boxShadow = `0 0 20px ${color}18`;
@@ -128,13 +179,26 @@ export default function Contact() {
                 >
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: `${color}15`, border: `1px solid ${color}44` }}
+                    style={{
+                      background: `${color}15`,
+                      border: `1px solid ${color}44`,
+                    }}
                   >
                     <Icon size={18} style={{ color }} />
                   </div>
                   <div>
-                    <p className="font-mono text-xs mb-0.5" style={{ color: "#94A3B8" }}>{label}</p>
-                    <p className="font-medium text-sm" style={{ color: "#F1F5F9" }}>{value}</p>
+                    <p
+                      className="font-mono text-xs mb-0.5"
+                      style={{ color: "#94A3B8" }}
+                    >
+                      {label}
+                    </p>
+                    <p
+                      className="font-medium text-sm"
+                      style={{ color: "#F1F5F9" }}
+                    >
+                      {value}
+                    </p>
                   </div>
                 </a>
               ))}
@@ -145,19 +209,33 @@ export default function Contact() {
                 download
                 className="flex items-center gap-4 p-4 rounded-xl transition-all duration-200 hover:scale-[1.02]"
                 style={{
-                  background: "linear-gradient(135deg, rgba(108,63,197,0.15), rgba(34,211,238,0.08))",
-                  border: "1px solid rgba(108,63,197,0.35)",
+                  background:
+                    "linear-gradient(135deg, rgba(108,63,197,0.15), rgba(34,211,238,0.08))",
+                  border: "1px solid rgba(108,63,197,0.35)", padding: "10px",
                 }}
               >
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ background: "rgba(108,63,197,0.2)", border: "1px solid rgba(108,63,197,0.5)" }}
+                  style={{
+                    background: "rgba(108,63,197,0.2)",
+                    border: "1px solid rgba(108,63,197,0.5)",
+                  }}
                 >
                   <Download size={18} style={{ color: "#A855F7" }} />
                 </div>
                 <div>
-                  <p className="font-mono text-xs mb-0.5" style={{ color: "#94A3B8" }}>Resume</p>
-                  <p className="font-medium text-sm" style={{ color: "#F1F5F9" }}>Download Resume PDF</p>
+                  <p
+                    className="font-mono text-xs mb-0.5"
+                    style={{ color: "#94A3B8" }}
+                  >
+                    Resume
+                  </p>
+                  <p
+                    className="font-medium text-sm"
+                    style={{ color: "#F1F5F9" }}
+                  >
+                    Download Resume PDF
+                  </p>
                 </div>
               </a>
             </div>
@@ -165,11 +243,17 @@ export default function Contact() {
 
           {/* ── Right: Contact form ── */}
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="show"
-            viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: 0.2 }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="glass p-6 md:p-8 h-full">
-              <h3 className="font-display font-semibold text-lg mb-6" style={{ color: "#F1F5F9" }}>
+            <div className="glass p-6 md:p-8 h-full" style={{ padding: "20px" }}>
+              <h3
+                className="font-display font-semibold text-lg mb-6"
+                style={{ color: "#F1F5F9", padding : "10px" }}
+              >
                 Send a Transmission
               </h3>
 
@@ -180,7 +264,10 @@ export default function Contact() {
                   animate={{ scale: 1, opacity: 1 }}
                 >
                   <CheckCircle size={48} style={{ color: "#4ade80" }} />
-                  <h4 className="font-display font-bold text-xl" style={{ color: "#F1F5F9" }}>
+                  <h4
+                    className="font-display font-bold text-xl"
+                    style={{ color: "#F1F5F9" }}
+                  >
                     Message Received!
                   </h4>
                   <p className="text-sm" style={{ color: "#94A3B8" }}>
@@ -190,7 +277,10 @@ export default function Contact() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="font-mono text-xs block mb-1.5" style={{ color: "#22D3EE" }}>
+                    <label
+                      className="font-mono text-xs block mb-1.5"
+                      style={{ color: "#22D3EE", padding: "10px 0 0 10px" }}
+                    >
                       NAME
                     </label>
                     <input
@@ -199,12 +289,17 @@ export default function Contact() {
                       placeholder="Your full name"
                       className="terminal-input"
                       value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      onChange={(e) =>
+                        setForm({ ...form, name: e.target.value })
+                      }
                       suppressHydrationWarning
                     />
                   </div>
                   <div>
-                    <label className="font-mono text-xs block mb-1.5" style={{ color: "#22D3EE" }}>
+                    <label
+                      className="font-mono text-xs block mb-1.5"
+                      style={{ color: "#22D3EE", padding: "10px 0 0 10px" }}
+                    >
                       EMAIL
                     </label>
                     <input
@@ -213,12 +308,17 @@ export default function Contact() {
                       placeholder="your@email.com"
                       className="terminal-input"
                       value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      onChange={(e) =>
+                        setForm({ ...form, email: e.target.value })
+                      }
                       suppressHydrationWarning
                     />
                   </div>
                   <div>
-                    <label className="font-mono text-xs block mb-1.5" style={{ color: "#22D3EE" }}>
+                    <label
+                      className="font-mono text-xs block mb-1.5"
+                      style={{ color: "#22D3EE", padding: "10px 0 0 10px" }}
+                    >
                       MESSAGE
                     </label>
                     <textarea
@@ -227,10 +327,28 @@ export default function Contact() {
                       placeholder="Tell me about the opportunity, project, or just say hello..."
                       className="terminal-input resize-none"
                       value={form.message}
-                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      onChange={(e) =>
+                        setForm({ ...form, message: e.target.value })
+                      }
                       suppressHydrationWarning
                     />
                   </div>
+
+                  {error && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex items-start gap-2 rounded-xl px-4 py-3 text-sm"
+                      style={{
+                        background: "rgba(239,68,68,0.08)",
+                        border: "1px solid rgba(239,68,68,0.3)",
+                        color: "#FCA5A5",
+                      }}
+                    >
+                      <span className="mt-0.5 flex-shrink-0">⚠</span>
+                      <span>{error}</span>
+                    </motion.div>
+                  )}
 
                   <motion.button
                     type="submit"
@@ -240,6 +358,7 @@ export default function Contact() {
                         ? "rgba(108,63,197,0.5)"
                         : "linear-gradient(135deg, #6C3FC5, #4F46E5)",
                       boxShadow: "0 0 30px rgba(108,63,197,0.3)",
+                      padding: "10px",
                     }}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -249,7 +368,11 @@ export default function Contact() {
                       <motion.div
                         className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
                         animate={{ rotate: 360 }}
-                        transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+                        transition={{
+                          duration: 0.8,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
                       />
                     ) : (
                       <>
@@ -259,9 +382,15 @@ export default function Contact() {
                     )}
                   </motion.button>
 
-                  <p className="font-mono text-xs text-center" style={{ color: "#94A3B8" }}>
+                  <p
+                    className="font-mono text-xs text-center"
+                    style={{ color: "#94A3B8", padding: "12px" }}
+                  >
                     Or email directly:{" "}
-                    <a href={`mailto:${personal.email}`} style={{ color: "#22D3EE" }}>
+                    <a
+                      href={`mailto:${personal.email}`}
+                      style={{ color: "#22D3EE" }}
+                    >
                       {personal.email}
                     </a>
                   </p>
