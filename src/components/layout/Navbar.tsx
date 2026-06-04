@@ -133,7 +133,7 @@ export default function Navbar() {
                 download
                 onClick={() => setMenuOpen(false)}
                 className="mt-4 flex items-center gap-2 px-6 py-3 rounded-xl text-white font-medium"
-                style={{ background: "linear-gradient(135deg, #6C3FC5, #22D3EE)" }}
+                style={{ background: "linear-gradient(135deg, #6C3FC5, #22D3EE)", padding : "10px 20px", borderRadius: "9999px" }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: nav.length * 0.06 }}
