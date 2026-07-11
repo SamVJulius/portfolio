@@ -286,6 +286,27 @@ export const projects = [
     github: "https://github.com/SamVJulius/ieee-website",
     status: "Deployed",
   },
+  {
+  id: "bhal-lang",
+  name: "bhal-lang",
+  subtitle: "A Custom Interpreted Programming Language",
+  description:
+    "A hand-crafted, interpreted programming language built from scratch in Python, featuring a quirky BH-prefixed keyword system. Implements a full Lexer → Parser → Interpreter pipeline with support for variables, arithmetic, control flow, functions, lists, and an interactive REPL shell — all with a unique syntax flavor.",
+  tech: ["Python"],
+  highlights: [
+    "Full Lexer → Parser → Interpreter pipeline built from scratch",
+    "Interactive REPL shell with script file execution support",
+    "Supports functions, closures, higher-order functions, and recursion",
+    "Dynamic typing with integers, floats, strings, and lists",
+    "Custom keyword system with BH-prefix syntax (BHIF, BHFOR, BHUNC, etc.)",
+    "Descriptive runtime error reporting with call stack tracebacks",
+  ],
+  category: "Programming Languages",
+  icon: "🐻",
+  color: "#F59E0B",
+  github: "https://github.com/SamVJulius/bhal-lang",
+  status: "Completed",
+},
 ];
 
 export const leadership = [
