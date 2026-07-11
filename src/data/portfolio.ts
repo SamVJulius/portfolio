@@ -288,7 +288,7 @@ export const projects = [
   },
   {
   id: "bhal-lang",
-  name: "bhal-lang",
+  name: "BhalLang",
   subtitle: "A Custom Interpreted Programming Language",
   description:
     "A hand-crafted, interpreted programming language built from scratch in Python, featuring a quirky BH-prefixed keyword system. Implements a full Lexer → Parser → Interpreter pipeline with support for variables, arithmetic, control flow, functions, lists, and an interactive REPL shell — all with a unique syntax flavor.",
