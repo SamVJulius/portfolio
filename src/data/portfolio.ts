@@ -26,7 +26,7 @@ export const roles = [
 ];
 
 export const stats = [
-  { value: 8.2,  label: "CGPA",                suffix: "" },
+  { value: 8.5,  label: "CGPA",                suffix: "" },
   { value: 25,   label: "Team Members Led",     suffix: "+" },
   { value: 5,    label: "Production Projects",  suffix: "+" },
   { value: 30,   label: "Technical Events",     suffix: "+" },
