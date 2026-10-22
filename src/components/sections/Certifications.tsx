@@ -50,6 +50,7 @@ export default function Certifications() {
                 borderColor: cert.placeholder ? "rgba(108,63,197,0.15)" : "rgba(168,85,247,0.4)",
                 borderStyle:  cert.placeholder ? "dashed" : "solid",
                 padding: cert.placeholder ? "2.5rem 1.5rem" : "1.5rem",
+                marginBottom: cert.placeholder ? "1rem" : "0",
               }}
             >
               {cert.placeholder ? (

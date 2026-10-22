@@ -26,7 +26,7 @@ export const roles = [
 ];
 
 export const stats = [
-  { value: 8.5,  label: "CGPA",                suffix: "" },
+  { value: 8.55,  label: "CGPA",                suffix: "" },
   { value: 25,   label: "Team Members Led",     suffix: "+" },
   { value: 5,    label: "Production Projects",  suffix: "+" },
   { value: 30,   label: "Technical Events",     suffix: "+" },
@@ -39,7 +39,7 @@ export const education = [
     short: "JUIT, Solan",
     degree: "B.Tech — Computer Science & Engineering",
     duration: "Sep 2022 – 2026",
-    score: "CGPA: 8.2",
+    score: "CGPA: 8.55",
     type: "university",
     icon: "🪐",
     coursework: [
@@ -331,7 +331,9 @@ export const leadership = [
 export const certifications = [
   { id: "cert-1", name: "Social Networks", issuer: "IIT Madras", year: "2025", placeholder: false },
   { id: "cert-2", name: "Digital Electronic Circuits", issuer: "IIT Kharagpur", year: "2025", placeholder: false },
-  { id: "cert-3", name: "Add Certification Here", issuer: "Certification Body", year: "2024", placeholder: true },
+  { id: "cert-3", name: "TCS iON NQT[93.14%]", issuer: "TCS", year: "2026", placeholder: false },
+  { id: "cert-4", name: "Coming Soon", issuer: "N/A", year: "2026", placeholder: true },
+
 ];
 
 export const nav = [
