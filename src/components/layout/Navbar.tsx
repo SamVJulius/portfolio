@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
 import { nav, personal } from "@/data/portfolio";
 import { Menu, X, Download } from "lucide-react";
 
